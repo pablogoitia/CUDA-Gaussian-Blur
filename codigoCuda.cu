@@ -130,8 +130,8 @@ void GaussianBlur(uchar4* const modifiedImage, const uchar4* const rgba, int row
     cudaMemcpy((void*)filterGPU, (void*)filter, filterWidth * filterWidth * sizeof(float), cudaMemcpyHostToDevice);
     block.x = 4;
     block.y = 32;
-    grid.x = ceil((double) rows / block.x);
-    grid.y = ceil((double) cols / block.y);
+    grid.x = ceil((double) cols / block.x);
+    grid.y = ceil((double) rows / block.y);
 
     /* Red channel */
     cudaMemcpy((void*)channelGPU, (void*)red, channelSize, cudaMemcpyHostToDevice);
@@ -231,14 +231,14 @@ int main(int argc, char** argv)
     //Apply the gaussian blur over the image with the given filter
     GaussianBlur(blurredImage, originalImage, height, width, filter, filterWidth);
 
-    /* TODO: No parece hacer nada. */
+    /* TODO: No parece hacer nada.
     for(int i=0;i<width*height;i++)
     {
         rgb_image[i*channels]=blurredImage[i].x;
         rgb_image[(i*channels)+1]=blurredImage[i].y;
         rgb_image[(i*channels)+2]=blurredImage[i].z;
         rgb_image[(i*channels)+3]=blurredImage[i].w;
-    }
+    } */
     stbi_write_jpg(outputPath, width, height, 4, blurredImage, 100);
 
     printf("Done!\n");
