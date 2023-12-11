@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image.h"
@@ -186,6 +187,8 @@ int main(int argc, char** argv)
 
     int filterWidth=9;
     float * filter=createFilter(filterWidth);
+    
+    struct timespec start, end;
 
 
     if (argc > 2)
@@ -229,7 +232,9 @@ int main(int argc, char** argv)
     }
 
     //Apply the gaussian blur over the image with the given filter
+    clock_gettime(CLOCK_MONOTONIC, &start);
     GaussianBlur(blurredImage, originalImage, height, width, filter, filterWidth);
+    clock_gettime(CLOCK_MONOTONIC, &end);
 
     /* TODO: No parece hacer nada.
     for(int i=0;i<width*height;i++)
@@ -241,6 +246,7 @@ int main(int argc, char** argv)
     } */
     stbi_write_jpg(outputPath, width, height, 4, blurredImage, 100);
 
+    printf("Time: %Lf\n", (long double) ((end.tv_sec - start.tv_sec) * 1000000000 + (end.tv_nsec - start.tv_nsec)) / 1000000000);
     printf("Done!\n");
     return 0;
 }
