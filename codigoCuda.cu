@@ -2,8 +2,8 @@
 #include <time.h>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image.h"
-#include "stb_image_write.h"
+#include "lib/stb_image.h"
+#include "lib/stb_image_write.h"
 
 #include <stdio.h>
 
@@ -125,27 +125,30 @@ void GaussianBlur(uchar4 *const modifiedImage, const uchar4 *const rgba, int row
     }
 
     // Compute convolution for each individual channel
-    cudaMemcpy((void *)filterGPU, (void *)filter, filterWidth * filterWidth * sizeof(float), cudaMemcpyHostToDevice);
-    block.x = 4;
-    block.y = 32;
+    block.x = 4;    // 4, initially
+    block.y = 32;   // 32, initially
     grid.x = ceil((double)cols / block.x);
     grid.y = ceil((double)rows / block.y);
+    cudaMemcpy((void *)filterGPU, (void *)filter, filterWidth * filterWidth * sizeof(float), cudaMemcpyHostToDevice);
 
     /* Red channel */
     cudaMemcpy((void *)channelGPU, (void *)red, channelSize, cudaMemcpyHostToDevice);
     ComputeConvolution<<<grid, block>>>(blurredChannelGPU, channelGPU, rows, cols, filterGPU, filterWidth);
+    cudaDeviceSynchronize();
 
     cudaMemcpy((void *)redBlurred, (void *)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
 
     /* Green channel */
     cudaMemcpy((void *)channelGPU, (void *)green, channelSize, cudaMemcpyHostToDevice);
     ComputeConvolution<<<grid, block>>>(blurredChannelGPU, channelGPU, rows, cols, filterGPU, filterWidth);
+    cudaDeviceSynchronize();
 
     cudaMemcpy((void *)greenBlurred, (void *)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
 
     /* Blue channel */
     cudaMemcpy((void *)channelGPU, (void *)blue, channelSize, cudaMemcpyHostToDevice);
     ComputeConvolution<<<grid, block>>>(blurredChannelGPU, channelGPU, rows, cols, filterGPU, filterWidth);
+    cudaDeviceSynchronize();
 
     cudaMemcpy((void *)blueBlurred, (void *)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
 

@@ -1,0 +1,110 @@
+[BLURRING ON CPU] img/src/facultad.jpg
+Width:1024, Height:768 Size(in Bytes):9437184
+Time: 2.600888
+Done!
+
+[BLURRING ON CPU] img/src/mountain_1024.jpg
+Width:1024, Height:683 Size(in Bytes):8392704
+Time: 2.296737
+Done!
+
+[BLURRING ON CPU] img/src/mountain_1024_square.jpg
+Width:1024, Height:1024 Size(in Bytes):12582912
+Time: 3.679048
+Done!
+
+[BLURRING ON CPU] img/src/mountain_1024_vertical.jpg
+Width:720, Height:1024 Size(in Bytes):8847360
+Time: 2.427314
+Done!
+
+[BLURRING ON CPU] img/src/mountain_2048.jpg
+Width:2048, Height:1365 Size(in Bytes):33546240
+Time: 9.761211
+Done!
+
+[BLURRING ON CPU] img/src/mountain_3072.jpg
+Width:3072, Height:2048 Size(in Bytes):75497472
+Time: 20.381085
+Done!
+
+[BLURRING ON CPU] img/src/mountain_4096.jpg
+Width:4096, Height:2731 Size(in Bytes):134234112
+Time: 38.914005
+Done!
+
+[BLURRING ON CPU] img/src/mountain_5120.jpg
+Width:5120, Height:3413 Size(in Bytes):209694720
+Time: 56.751638
+Done!
+
+[BLURRING ON CPU] img/src/mountain_6144.jpg
+Width:6144, Height:4096 Size(in Bytes):301989888
+Time: 82.655637
+Done!
+
+[BLURRING ON CPU] img/src/mountain_7168.jpg
+Width:7168, Height:4779 Size(in Bytes):411070464
+Time: 114.972661
+Done!
+
+[BLURRING ON CPU] img/src/mountain_8192.jpg
+Width:8192, Height:5461 Size(in Bytes):536838144
+Time: 130.252876
+Done!
+
+[BLURRING ON GPU] img/src/facultad.jpg
+Width:1024, Height:768 Size(in Bytes):9437184
+Time: 1.011793
+Done!
+
+[BLURRING ON GPU] img/src/mountain_1024.jpg
+Width:1024, Height:683 Size(in Bytes):8392704
+Time: 0.299583
+Done!
+
+[BLURRING ON GPU] img/src/mountain_1024_square.jpg
+Width:1024, Height:1024 Size(in Bytes):12582912
+Time: 0.270380
+Done!
+
+[BLURRING ON GPU] img/src/mountain_1024_vertical.jpg
+Width:720, Height:1024 Size(in Bytes):8847360
+Time: 0.296042
+Done!
+
+[BLURRING ON GPU] img/src/mountain_2048.jpg
+Width:2048, Height:1365 Size(in Bytes):33546240
+Time: 0.363297
+Done!
+
+[BLURRING ON GPU] img/src/mountain_3072.jpg
+Width:3072, Height:2048 Size(in Bytes):75497472
+Time: 0.494175
+Done!
+
+[BLURRING ON GPU] img/src/mountain_4096.jpg
+Width:4096, Height:2731 Size(in Bytes):134234112
+Time: 0.660745
+Done!
+
+[BLURRING ON GPU] img/src/mountain_5120.jpg
+Width:5120, Height:3413 Size(in Bytes):209694720
+Time: 0.861975
+Done!
+
+[BLURRING ON GPU] img/src/mountain_6144.jpg
+Width:6144, Height:4096 Size(in Bytes):301989888
+Time: 1.098044
+Done!
+
+[BLURRING ON GPU] img/src/mountain_7168.jpg
+Width:7168, Height:4779 Size(in Bytes):411070464
+Time: 1.443934
+Done!
+
+[BLURRING ON GPU] img/src/mountain_8192.jpg
+Width:8192, Height:5461 Size(in Bytes):536838144
+Time: 1.729266
+Done!
+
