@@ -1,0 +1,114 @@
+[BLURRING ON GPU]  (block.x=2, block.y=16)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=2, block.y=16, grid.x=2048, grid.y=171
+Time: 0.830074
+Done!
+
+[BLURRING ON GPU]  (block.x=2, block.y=32)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=2, block.y=32, grid.x=2048, grid.y=86
+Time: 0.810478
+Done!
+
+[BLURRING ON GPU]  (block.x=4, block.y=8)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=8, grid.x=1024, grid.y=342
+Time: 0.671498
+Done!
+
+[BLURRING ON GPU]  (block.x=4, block.y=16)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=16, grid.x=1024, grid.y=171
+Time: 0.662515
+Done!
+
+[BLURRING ON GPU]  (block.x=4, block.y=32)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.657197
+Done!
+
+[BLURRING ON GPU]  (block.x=8, block.y=4)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=8, block.y=4, grid.x=512, grid.y=683
+Time: 0.605463
+Done!
+
+[BLURRING ON GPU]  (block.x=8, block.y=8)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=8, block.y=8, grid.x=512, grid.y=342
+Time: 0.599629
+Done!
+
+[BLURRING ON GPU]  (block.x=8, block.y=16)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=8, block.y=16, grid.x=512, grid.y=171
+Time: 0.597653
+Done!
+
+[BLURRING ON GPU]  (block.x=8, block.y=32)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=8, block.y=32, grid.x=512, grid.y=86
+Time: 0.603880
+Done!
+
+[BLURRING ON GPU]  (block.x=16, block.y=2)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=16, block.y=2, grid.x=256, grid.y=1366
+Time: 0.569352
+Done!
+
+[BLURRING ON GPU]  (block.x=16, block.y=4)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=16, block.y=4, grid.x=256, grid.y=683
+Time: 0.561107
+Done!
+
+[BLURRING ON GPU]  (block.x=16, block.y=8)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=16, block.y=8, grid.x=256, grid.y=342
+Time: 0.569083
+Done!
+
+[BLURRING ON GPU]  (block.x=16, block.y=16)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=16, block.y=16, grid.x=256, grid.y=171
+Time: 0.561169
+Done!
+
+[BLURRING ON GPU]  (block.x=16, block.y=32)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=16, block.y=32, grid.x=256, grid.y=86
+Time: 0.563625
+Done!
+
+[BLURRING ON GPU]  (block.x=32, block.y=2)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=32, block.y=2, grid.x=128, grid.y=1366
+Time: 0.542528
+Done!
+
+[BLURRING ON GPU]  (block.x=32, block.y=4)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=32, block.y=4, grid.x=128, grid.y=683
+Time: 0.548502
+Done!
+
+[BLURRING ON GPU]  (block.x=32, block.y=8)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=32, block.y=8, grid.x=128, grid.y=342
+Time: 0.554126
+Done!
+
+[BLURRING ON GPU]  (block.x=32, block.y=16)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=32, block.y=16, grid.x=128, grid.y=171
+Time: 0.553732
+Done!
+
+[BLURRING ON GPU]  (block.x=32, block.y=32)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=32, block.y=32, grid.x=128, grid.y=86
+Time: 0.558231
+Done!
+
