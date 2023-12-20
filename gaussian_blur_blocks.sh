@@ -28,7 +28,7 @@ for x in {1..32}; do
                 if (( (x * y) % 32 == 0 )); then
                     threads=$((x * y))
                     echo "[BLURRING ON GPU] $file (block.x=$x, block.y=$y; TOTAL: $threads threads)" # Debug info
-                    echo "[BLURRING ON GPU] $file (block.x=$x, block.y=$y)" >> "$report_file"
+                    echo "[BLURRING ON GPU] $file (block.x=$x, block.y=$y; TOTAL: $threads threads)" >> "$report_file"
                     ./gauss_gpu "$src_image" "$dest_image" "$x" "$y" >> "$report_file"
                     echo >> "$report_file"
                 fi
