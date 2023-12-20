@@ -90,7 +90,7 @@ __global__ void ComputeConvolution(unsigned char *const blurredChannel, const un
     }
 }
 
-void GaussianBlur(uchar4 *const modifiedImage, const uchar4 *const rgba, int rows, int cols, float *filter, int filterWidth)
+void GaussianBlur(uchar4 *const modifiedImage, const uchar4 *const rgba, int rows, int cols, float *filter, int filterWidth, dim3 block, dim3 grid)
 {
     const int numPixels = rows * cols;
     const int channelSize = numPixels * sizeof(unsigned char);
@@ -111,9 +111,6 @@ void GaussianBlur(uchar4 *const modifiedImage, const uchar4 *const rgba, int row
     cudaMalloc(&channelGPU, channelSize);
     cudaMalloc(&blurredChannelGPU, channelSize);
 
-    // GPU variables
-    dim3 block, grid;
-
     // Separate RGBAimage into red, green, and blue components
     for (int p = 0; p < numPixels; ++p)
     {
@@ -125,10 +122,6 @@ void GaussianBlur(uchar4 *const modifiedImage, const uchar4 *const rgba, int row
     }
 
     // Compute convolution for each individual channel
-    block.x = 4;    // 4, initially
-    block.y = 32;   // 32, initially
-    grid.x = ceil((double)cols / block.x);
-    grid.y = ceil((double)rows / block.y);
     cudaMemcpy((void *)filterGPU, (void *)filter, filterWidth * filterWidth * sizeof(float), cudaMemcpyHostToDevice);
 
     /* Red channel */
@@ -188,6 +181,9 @@ int main(int argc, char **argv)
 
     struct timespec start, end;
 
+    // GPU variables
+    dim3 block, grid;
+
     if (argc > 2)
     {
         imagePath = argv[1];
@@ -229,9 +225,24 @@ int main(int argc, char **argv)
         }
     }
 
+    // Calculate block dimensions based on the parameters and the image dimensions
+    if (argc > 4)
+    {
+        block.x = atoi(argv[3]);
+        block.y = atoi(argv[4]);
+    }
+    else
+    {
+        block.x = 4;
+        block.y = 32;
+    }
+    grid.x = ceil((double)width / block.x);
+    grid.y = ceil((double)height / block.y);
+    printf("block.x=%d, block.y=%d, grid.x=%d, grid.y=%d\n", block.x, block.y, grid.x, grid.y);
+
     // Apply the gaussian blur over the image with the given filter
     clock_gettime(CLOCK_MONOTONIC, &start);
-    GaussianBlur(blurredImage, originalImage, height, width, filter, filterWidth);
+    GaussianBlur(blurredImage, originalImage, height, width, filter, filterWidth, block, grid);
     clock_gettime(CLOCK_MONOTONIC, &end);
 
     /* TODO: No parece hacer nada.
