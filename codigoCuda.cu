@@ -7,17 +7,15 @@
 
 #include <stdio.h>
 
-float * createFilter(int width)
+float *createFilter(int width)
 {
-    const float sigma = 2.f;                          // Standard deviation of the Gaussian distribution.
+    const float sigma = 2.f; // Standard deviation of the Gaussian distribution.
 
     const int half = width / 2;
     float sum = 0.f;
 
-
     // Create convolution matrix
-    float * res=(float *)malloc(width*width*sizeof(float));
-
+    float *res = (float *)malloc(width * width * sizeof(float));
 
     // Calculate filter sum first
     for (int r = -half; r <= half; ++r)
@@ -48,16 +46,15 @@ float * createFilter(int width)
     return res;
 }
 
-
 // Copmute gaussian blur per channel on the GPU.
 // Call this function for each of red, green, and blue channels
 // Returns blurred channel.
-__global__ void ComputeConvolution(unsigned char* const blurredChannel, const unsigned char* const inputChannel, int rows, int cols, float * filter, int filterWidth)
+__global__ void ComputeConvolution(unsigned char *const blurredChannel, const unsigned char *const inputChannel, int rows, int cols, float *filter, int filterWidth)
 {
     // Filter width should be odd as we are calculating average blur for a pixel plus some offset in all directions
 
-    const int half   = filterWidth / 2;
-    const int width  = cols - 1;
+    const int half = filterWidth / 2;
+    const int width = cols - 1;
     const int height = rows - 1;
 
     int r = blockDim.y * blockIdx.y + threadIdx.y;
@@ -93,19 +90,19 @@ __global__ void ComputeConvolution(unsigned char* const blurredChannel, const un
     }
 }
 
-void GaussianBlur(uchar4* const modifiedImage, const uchar4* const rgba, int rows, int cols, float * filter, int  filterWidth)
+void GaussianBlur(uchar4 *const modifiedImage, const uchar4 *const rgba, int rows, int cols, float *filter, int filterWidth)
 {
     const int numPixels = rows * cols;
     const int channelSize = numPixels * sizeof(unsigned char);
 
     // Create channel variables
-    unsigned char* red = new unsigned char[numPixels];
-    unsigned char* green = new unsigned char[numPixels];
-    unsigned char* blue = new unsigned char[numPixels];
+    unsigned char *red = new unsigned char[numPixels];
+    unsigned char *green = new unsigned char[numPixels];
+    unsigned char *blue = new unsigned char[numPixels];
 
-    unsigned char* redBlurred = new unsigned char[numPixels];
-    unsigned char* greenBlurred = new unsigned char[numPixels];
-    unsigned char* blueBlurred = new unsigned char[numPixels];
+    unsigned char *redBlurred = new unsigned char[numPixels];
+    unsigned char *greenBlurred = new unsigned char[numPixels];
+    unsigned char *blueBlurred = new unsigned char[numPixels];
 
     // GPU Device Memory
     unsigned char *channelGPU, *blurredChannelGPU;
@@ -124,33 +121,33 @@ void GaussianBlur(uchar4* const modifiedImage, const uchar4* const rgba, int row
 
         red[p] = pixel.x;
         green[p] = pixel.y;
-        blue [p] = pixel.z;
+        blue[p] = pixel.z;
     }
 
     // Compute convolution for each individual channel
-    cudaMemcpy((void*)filterGPU, (void*)filter, filterWidth * filterWidth * sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy((void *)filterGPU, (void *)filter, filterWidth * filterWidth * sizeof(float), cudaMemcpyHostToDevice);
     block.x = 4;
     block.y = 32;
-    grid.x = ceil((double) cols / block.x);
-    grid.y = ceil((double) rows / block.y);
+    grid.x = ceil((double)cols / block.x);
+    grid.y = ceil((double)rows / block.y);
 
     /* Red channel */
-    cudaMemcpy((void*)channelGPU, (void*)red, channelSize, cudaMemcpyHostToDevice);
+    cudaMemcpy((void *)channelGPU, (void *)red, channelSize, cudaMemcpyHostToDevice);
     ComputeConvolution<<<grid, block>>>(blurredChannelGPU, channelGPU, rows, cols, filterGPU, filterWidth);
 
-    cudaMemcpy((void*)redBlurred, (void*)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
+    cudaMemcpy((void *)redBlurred, (void *)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
 
     /* Green channel */
-    cudaMemcpy((void*)channelGPU, (void*)green, channelSize, cudaMemcpyHostToDevice);
+    cudaMemcpy((void *)channelGPU, (void *)green, channelSize, cudaMemcpyHostToDevice);
     ComputeConvolution<<<grid, block>>>(blurredChannelGPU, channelGPU, rows, cols, filterGPU, filterWidth);
 
-    cudaMemcpy((void*)greenBlurred, (void*)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
+    cudaMemcpy((void *)greenBlurred, (void *)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
 
     /* Blue channel */
-    cudaMemcpy((void*)channelGPU, (void*)blue, channelSize, cudaMemcpyHostToDevice);
+    cudaMemcpy((void *)channelGPU, (void *)blue, channelSize, cudaMemcpyHostToDevice);
     ComputeConvolution<<<grid, block>>>(blurredChannelGPU, channelGPU, rows, cols, filterGPU, filterWidth);
 
-    cudaMemcpy((void*)blueBlurred, (void*)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
+    cudaMemcpy((void *)blueBlurred, (void *)blurredChannelGPU, channelSize, cudaMemcpyDeviceToHost);
 
     // Recombine channels back into an RGBAimage setting alpha to 255, or fully opaque
     for (int p = 0; p < numPixels; ++p)
@@ -174,22 +171,19 @@ void GaussianBlur(uchar4* const modifiedImage, const uchar4* const rgba, int row
     delete[] blueBlurred;
 }
 
-
-
 // Main entry into the application
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-    char * imagePath;
-    char * outputPath;
-    
-    int height, width, bpp, channels=4;
-    uchar4 * originalImage, * blurredImage;
+    char *imagePath;
+    char *outputPath;
 
-    int filterWidth=9;
-    float * filter=createFilter(filterWidth);
-    
+    int height, width, bpp, channels = 4;
+    uchar4 *originalImage, *blurredImage;
+
+    int filterWidth = 9;
+    float *filter = createFilter(filterWidth);
+
     struct timespec start, end;
-
 
     if (argc > 2)
     {
@@ -202,36 +196,37 @@ int main(int argc, char** argv)
         exit(1);
     }
 
-    //Read the image
-    uint8_t* rgb_image = stbi_load(imagePath, &width, &height, &bpp, channels);
-    
-    if(rgb_image==NULL) printf("Could not load image file: %s\n",imagePath);
-    
-    //Allocate and copy
-    originalImage=(uchar4 *)malloc(width*height*sizeof(uchar4));
-    blurredImage=(uchar4 *)malloc(width*height*sizeof(uchar4));
-    printf("Width:%d, Height:%d Size(in Bytes):%d\n", width, height, width*height*bpp*channels);
-    for(int i=0;i<width*height*channels;i++)
+    // Read the image
+    uint8_t *rgb_image = stbi_load(imagePath, &width, &height, &bpp, channels);
+
+    if (rgb_image == NULL)
+        printf("Could not load image file: %s\n", imagePath);
+
+    // Allocate and copy
+    originalImage = (uchar4 *)malloc(width * height * sizeof(uchar4));
+    blurredImage = (uchar4 *)malloc(width * height * sizeof(uchar4));
+    printf("Width:%d, Height:%d Size(in Bytes):%d\n", width, height, width * height * bpp * channels);
+    for (int i = 0; i < width * height * channels; i++)
     {
-        int mod=i%channels;
-        switch(mod)
+        int mod = i % channels;
+        switch (mod)
         {
-            case 0:
-                originalImage[i/channels].x=rgb_image[i];
-                break;
-            case 1:
-                originalImage[i/channels].y=rgb_image[i];
-                break;
-            case 2:
-                originalImage[i/channels].z=rgb_image[i];
-                break;
-            case 3:
-                originalImage[i/channels].w=rgb_image[i];
-                break;
+        case 0:
+            originalImage[i / channels].x = rgb_image[i];
+            break;
+        case 1:
+            originalImage[i / channels].y = rgb_image[i];
+            break;
+        case 2:
+            originalImage[i / channels].z = rgb_image[i];
+            break;
+        case 3:
+            originalImage[i / channels].w = rgb_image[i];
+            break;
         }
     }
 
-    //Apply the gaussian blur over the image with the given filter
+    // Apply the gaussian blur over the image with the given filter
     clock_gettime(CLOCK_MONOTONIC, &start);
     GaussianBlur(blurredImage, originalImage, height, width, filter, filterWidth);
     clock_gettime(CLOCK_MONOTONIC, &end);
@@ -246,7 +241,7 @@ int main(int argc, char** argv)
     } */
     stbi_write_jpg(outputPath, width, height, 4, blurredImage, 100);
 
-    printf("Time: %Lf\n", (long double) ((end.tv_sec - start.tv_sec) * 1000000000 + (end.tv_nsec - start.tv_nsec)) / 1000000000);
+    printf("Time: %Lf\n", (long double)((end.tv_sec - start.tv_sec) * 1000000000 + (end.tv_nsec - start.tv_nsec)) / 1000000000);
     printf("Done!\n");
     return 0;
 }
