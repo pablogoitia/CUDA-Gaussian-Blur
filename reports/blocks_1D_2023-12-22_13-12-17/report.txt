@@ -1,0 +1,36 @@
+[BLURRING ON GPU] mountain_4096.jpg (block=32)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.675808
+Done!
+
+[BLURRING ON GPU] mountain_4096.jpg (block=64)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.678785
+Done!
+
+[BLURRING ON GPU] mountain_4096.jpg (block=128)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.670385
+Done!
+
+[BLURRING ON GPU] mountain_4096.jpg (block=256)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.658784
+Done!
+
+[BLURRING ON GPU] mountain_4096.jpg (block=512)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.678237
+Done!
+
+[BLURRING ON GPU] mountain_4096.jpg (block=1024)
+Width:4096, Height:2731 Size(in Bytes):134234112
+block.x=4, block.y=32, grid.x=1024, grid.y=86
+Time: 0.652513
+Done!
+

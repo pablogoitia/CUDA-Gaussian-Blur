@@ -1,0 +1,36 @@
+[BLURRING ON GPU] facultad.jpg (block=32)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.316473
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block=64)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.290951
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block=128)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.272350
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block=256)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.288609
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block=512)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.267319
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block=1024)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.261809
+Done!
+
