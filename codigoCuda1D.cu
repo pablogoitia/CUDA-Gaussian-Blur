@@ -58,12 +58,14 @@ __global__ void ComputeConvolution(unsigned char *const blurredChannel, const un
     const int height = rows - 1;
 
     int tid = blockDim.x * blockIdx.x + threadIdx.x;
+    int r = tid / cols;
+    int c = tid % cols;
 
     // Compute blur(int c = 0; c < cols; ++c)
     float blur = 0.f;
 
     // Average pixel color summing up adjacent pixels.
-    if (tid < rows * cols)
+    if (r < rows && c < cols)
     {
         for (int i = -half; i <= half; ++i)
         {
