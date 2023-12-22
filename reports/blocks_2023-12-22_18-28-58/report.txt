@@ -1,0 +1,114 @@
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=2, block.y=16; TOTAL: 32 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=2, block.y=16, grid.x=2048, grid.y=192
+Time: 0.898144
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=2, block.y=32; TOTAL: 64 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=2, block.y=32, grid.x=2048, grid.y=96
+Time: 0.889355
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=4, block.y=8; TOTAL: 32 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=4, block.y=8, grid.x=1024, grid.y=384
+Time: 0.736843
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=4, block.y=16; TOTAL: 64 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=4, block.y=16, grid.x=1024, grid.y=192
+Time: 0.729627
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=4, block.y=32; TOTAL: 128 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=4, block.y=32, grid.x=1024, grid.y=96
+Time: 0.724468
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=8, block.y=4; TOTAL: 32 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=8, block.y=4, grid.x=512, grid.y=768
+Time: 0.670115
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=8, block.y=8; TOTAL: 64 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=8, block.y=8, grid.x=512, grid.y=384
+Time: 0.663694
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=8, block.y=16; TOTAL: 128 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=8, block.y=16, grid.x=512, grid.y=192
+Time: 0.653519
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=8, block.y=32; TOTAL: 256 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=8, block.y=32, grid.x=512, grid.y=96
+Time: 0.644658
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=16, block.y=2; TOTAL: 32 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=16, block.y=2, grid.x=256, grid.y=1536
+Time: 0.625187
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=16, block.y=4; TOTAL: 64 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=16, block.y=4, grid.x=256, grid.y=768
+Time: 0.619137
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=16, block.y=8; TOTAL: 128 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=16, block.y=8, grid.x=256, grid.y=384
+Time: 0.614501
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=16, block.y=16; TOTAL: 256 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=16, block.y=16, grid.x=256, grid.y=192
+Time: 0.616119
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=16, block.y=32; TOTAL: 512 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=16, block.y=32, grid.x=256, grid.y=96
+Time: 0.610112
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=32, block.y=2; TOTAL: 64 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=32, block.y=2, grid.x=128, grid.y=1536
+Time: 0.607851
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=32, block.y=4; TOTAL: 128 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=32, block.y=4, grid.x=128, grid.y=768
+Time: 0.605864
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=32, block.y=8; TOTAL: 256 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=32, block.y=8, grid.x=128, grid.y=384
+Time: 0.607647
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=32, block.y=16; TOTAL: 512 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=32, block.y=16, grid.x=128, grid.y=192
+Time: 0.614573
+Done!
+
+[BLURRING ON GPU] mountain_4096_3072.jpg (block.x=32, block.y=32; TOTAL: 1024 threads)
+Width:4096, Height:3072 Size(in Bytes):150994944
+block.x=32, block.y=32, grid.x=128, grid.y=96
+Time: 0.609489
+Done!
+
