@@ -233,8 +233,8 @@ int main(int argc, char **argv)
     }
     else
     {
-        block.x = 4;
-        block.y = 32;
+        block.x = 32;   // 4
+        block.y = 4;    // 32
     }
     grid.x = ceil((double)width / block.x);
     grid.y = ceil((double)height / block.y);
