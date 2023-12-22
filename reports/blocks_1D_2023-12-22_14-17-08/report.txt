@@ -1,0 +1,36 @@
+[BLURRING ON GPU] mountain_1024_768.jpg (block=32)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.305688
+Done!
+
+[BLURRING ON GPU] mountain_1024_768.jpg (block=64)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.304635
+Done!
+
+[BLURRING ON GPU] mountain_1024_768.jpg (block=128)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.294651
+Done!
+
+[BLURRING ON GPU] mountain_1024_768.jpg (block=256)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.292107
+Done!
+
+[BLURRING ON GPU] mountain_1024_768.jpg (block=512)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.299337
+Done!
+
+[BLURRING ON GPU] mountain_1024_768.jpg (block=1024)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.288671
+Done!
+
