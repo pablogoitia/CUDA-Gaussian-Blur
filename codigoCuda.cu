@@ -225,7 +225,7 @@ int main(int argc, char **argv)
         }
     }
 
-    // Calculate block dimensions based on the parameters and the image dimensions
+    // Calculate block and grid dimensions based on the parameters and the image dimensions
     if (argc > 4)
     {
         block.x = atoi(argv[3]);
@@ -245,16 +245,10 @@ int main(int argc, char **argv)
     GaussianBlur(blurredImage, originalImage, height, width, filter, filterWidth, block, grid);
     clock_gettime(CLOCK_MONOTONIC, &end);
 
-    /* TODO: No parece hacer nada.
-    for(int i=0;i<width*height;i++)
-    {
-        rgb_image[i*channels]=blurredImage[i].x;
-        rgb_image[(i*channels)+1]=blurredImage[i].y;
-        rgb_image[(i*channels)+2]=blurredImage[i].z;
-        rgb_image[(i*channels)+3]=blurredImage[i].w;
-    } */
+    // Write the image back to disk
     stbi_write_jpg(outputPath, width, height, 4, blurredImage, 100);
 
+    // Debug info
     printf("Time: %Lf\n", (long double)((end.tv_sec - start.tv_sec) * 1000000000 + (end.tv_nsec - start.tv_nsec)) / 1000000000);
     printf("Done!\n");
     return 0;
