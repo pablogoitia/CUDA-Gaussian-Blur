@@ -3,10 +3,10 @@
 file="mountain_4096.jpg"
 src_image="img/src/$file"
 dest_image="img/dest/mountain_4096.jpg"
-datetime=$(date +%Y-%m-%d_%H-%M-%S)
 
-report_dir="reports"
-report_file="$report_dir/report_1D_$datetime.txt"
+datetime=$(date +%Y-%m-%d_%H-%M-%S)
+report_dir="reports/blocks_1D_$datetime"
+report_file="$report_dir/report.txt"
 
 profiling_dir="$report_dir"
 
@@ -29,5 +29,5 @@ done
 # Finally, executes while profiling to collect stats. It will require sudo.
 for x in 32 64 128 256 512 1024; do
     echo "[PROFILING] $file" # Debug info
-    sudo nvprof -m all ./gauss_gpu "$src_image" "$dest_image" "$x" &> "$profiling_dir/profile_1D_$x.txt"
+    sudo nvprof -m all ./gauss_gpu "$src_image" "$dest_image" "$x" &> "$profiling_dir/profile_$x.txt"
 done
