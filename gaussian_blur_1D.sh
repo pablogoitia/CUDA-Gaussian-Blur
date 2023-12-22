@@ -1,6 +1,7 @@
 #!/bin/bash
 
-src_image="img/src/mountain_4096.jpg"
+file="mountain_4096.jpg"
+src_image="img/src/$file"
 dest_image="img/dest/mountain_4096.jpg"
 datetime=$(date +%Y-%m-%d_%H-%M-%S)
 
