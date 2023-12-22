@@ -1,0 +1,114 @@
+[BLURRING ON GPU] facultad.jpg (block.x=2, block.y=16; TOTAL: 32 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=2, block.y=16, grid.x=512, grid.y=48
+Time: 0.327070
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=2, block.y=32; TOTAL: 64 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=2, block.y=32, grid.x=512, grid.y=24
+Time: 0.304995
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=4, block.y=8; TOTAL: 32 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=8, grid.x=256, grid.y=96
+Time: 0.260898
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=4, block.y=16; TOTAL: 64 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=16, grid.x=256, grid.y=48
+Time: 0.272989
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=4, block.y=32; TOTAL: 128 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=4, block.y=32, grid.x=256, grid.y=24
+Time: 0.312796
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=8, block.y=4; TOTAL: 32 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=8, block.y=4, grid.x=128, grid.y=192
+Time: 0.298878
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=8, block.y=8; TOTAL: 64 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=8, block.y=8, grid.x=128, grid.y=96
+Time: 0.266090
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=8, block.y=16; TOTAL: 128 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=8, block.y=16, grid.x=128, grid.y=48
+Time: 0.310250
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=8, block.y=32; TOTAL: 256 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=8, block.y=32, grid.x=128, grid.y=24
+Time: 0.289247
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=16, block.y=2; TOTAL: 32 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=16, block.y=2, grid.x=64, grid.y=384
+Time: 0.264019
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=16, block.y=4; TOTAL: 64 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=16, block.y=4, grid.x=64, grid.y=192
+Time: 0.284053
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=16, block.y=8; TOTAL: 128 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=16, block.y=8, grid.x=64, grid.y=96
+Time: 0.251131
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=16, block.y=16; TOTAL: 256 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=16, block.y=16, grid.x=64, grid.y=48
+Time: 0.305744
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=16, block.y=32; TOTAL: 512 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=16, block.y=32, grid.x=64, grid.y=24
+Time: 0.298393
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=32, block.y=2; TOTAL: 64 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=32, block.y=2, grid.x=32, grid.y=384
+Time: 0.294059
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=32, block.y=4; TOTAL: 128 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=32, block.y=4, grid.x=32, grid.y=192
+Time: 0.301289
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=32, block.y=8; TOTAL: 256 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=32, block.y=8, grid.x=32, grid.y=96
+Time: 0.292738
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=32, block.y=16; TOTAL: 512 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=32, block.y=16, grid.x=32, grid.y=48
+Time: 0.281793
+Done!
+
+[BLURRING ON GPU] facultad.jpg (block.x=32, block.y=32; TOTAL: 1024 threads)
+Width:1024, Height:768 Size(in Bytes):9437184
+block.x=32, block.y=32, grid.x=32, grid.y=24
+Time: 0.257268
+Done!
+
